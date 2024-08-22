@@ -31,7 +31,7 @@ O con yarn:
 
 yarn dev
 
-Esto abrirá la aplicación en http://localhost:3000.
+Esto abrirá la aplicación en http://localhost:5173.
 
 ## Construcción para producción
 Para construir la aplicación para producción:
