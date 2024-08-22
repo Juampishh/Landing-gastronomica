@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./Cards";
+import toast from "react-hot-toast";
 
 interface Product {
   id: number;
@@ -30,6 +31,7 @@ function Layout() {
         setProducts(response.data.results);
       } catch (err) {
         setError(err as Error);
+        toast.error("Se alcanzó el límite de consultas a la API diarias.");
       } finally {
         setLoading(false);
       }
@@ -40,15 +42,23 @@ function Layout() {
 
   if (loading)
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex items-center justify-center h-screen">
         <div className="spinner"></div>
       </div>
     );
   if (error)
     return (
-      <p className="text-red-500 text-center mt-4">
-        Hubo un error al cargar los productos.
-      </p>
+      <div className="flex items-center justify-center h-screen bg-red-100">
+        <div className="p-6 text-center bg-red-200 rounded-lg shadow-md">
+          <h2 className="text-lg font-semibold text-red-700">
+            ¡Ocurrió un error!
+          </h2>
+          <p className="mt-2 text-red-600">
+            No se pudieron cargar los productos en este momento. Por favor,
+            intenta de nuevo más tarde.
+          </p>
+        </div>
+      </div>
     );
 
   // Función para generar un precio aleatorio entre 3500 y 5000
@@ -59,14 +69,14 @@ function Layout() {
   return (
     <div className="relative p-10">
       {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+      <div className="absolute inset-0 z-0 bg-black opacity-50"></div>
       <div className="relative z-10">
         {products.length === 0 ? (
-          <div className="flex justify-center items-center h-screen text-center text-gray-600">
+          <div className="flex items-center justify-center h-screen text-center text-gray-600">
             <p>No se encontraron productos disponibles.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {products.map((product, index) => (
               <ProductCard
                 key={product.id}
