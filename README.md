@@ -7,6 +7,7 @@ Este proyecto es una landing page para una hamburguesería, desarrollada con Rea
 
 - Node.js (versión 14 o superior)
 - npm (versión 6 o superior) o yarn (opcional)
+- API utilizada spoonacular API (limit de 150 consultas diarias)
 
 ## Instalación
 
