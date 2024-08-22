@@ -29,8 +29,7 @@ const CartDropdown: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   };
 
   const handlePurchase = () => {
-    // Implementar la lógica de compra aquí
-    alert("Compra realizada con éxito!"); // Placeholder
+    alert("Compra realizada con éxito!");
   };
 
   return isOpen ? (

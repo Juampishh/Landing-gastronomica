@@ -17,7 +17,6 @@ function Contact() {
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
-    // Aquí puedes agregar la lógica para enviar los datos del formulario
   };
 
   return (
