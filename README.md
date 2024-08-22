@@ -43,23 +43,3 @@ yarn build
 
 Los archivos construidos estarán en la carpeta dist.
 
-Estructura del Proyecto
-hamburgueseria-landing-page/
-├── public/
-│   ├── index.html
-│   └── ...
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── redux/
-│   ├── App.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── ...
-├── .gitignore
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-
-
-
