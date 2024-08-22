@@ -1,15 +1,21 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+
+interface IFormInput {
+  name: string;
+  email: string;
+  message: string;
+}
 
 function Contact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<IFormInput>();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
     // Aquí puedes agregar la lógica para enviar los datos del formulario
   };
