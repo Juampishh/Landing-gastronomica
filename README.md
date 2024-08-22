@@ -14,7 +14,7 @@ Este proyecto es una landing page para una hamburguesería, desarrollada con Rea
 
    ```bash
    git clone https://github.com/tu-usuario/hamburgueseria-landing-page.git
-   cd hamburgueseria-landing-page
+   cd landing-gastronomica
 
 ## Instalar las dependencias: Con npm:
 npm install
